@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark text-white antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-lg font-medium
+           transition-all duration-300 hover:bg-primary/90
+           active:scale-95 touch-manipulation
+           lg:px-8 lg:py-4;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent text-white rounded-lg font-medium
+           border border-white/20 transition-all duration-300
+           hover:bg-white/10 active:scale-95 touch-manipulation
+           lg:px-8 lg:py-4;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 bg-secondary text-white rounded-lg font-medium
+           transition-all duration-300 hover:bg-secondary/90
+           active:scale-95 touch-manipulation
+           lg:px-8 lg:py-4;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-dark/50 backdrop-blur-sm rounded-xl p-4
+           border border-white/10
+           lg:p-6 lg:hover:border-primary/50 lg:transition-colors;
+  }
+
+  .card-hover {
+    @apply card hover:bg-dark/70 hover:border-primary/30
+           transition-all duration-300 cursor-pointer;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 px-4 lg:py-24 lg:px-8;
+  }
+
+  .section-dark {
+    @apply section bg-dark;
+  }
+
+  .section-gradient {
+    @apply section bg-gradient-to-b from-dark to-dark/90;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 lg:px-8;
+  }
+
+  /* Typography */
+  .heading-1 {
+    @apply text-3xl font-bold lg:text-5xl xl:text-6xl;
+  }
+
+  .heading-2 {
+    @apply text-2xl font-bold lg:text-4xl;
+  }
+
+  .heading-3 {
+    @apply text-xl font-semibold lg:text-2xl;
+  }
+
+  .body-text {
+    @apply text-base text-gray-300 lg:text-lg;
+  }
+
+  .body-small {
+    @apply text-sm text-gray-400;
+  }
+
+  /* Hide on mobile, show on desktop */
+  .desktop-only {
+    @apply hidden lg:block;
+  }
+
+  /* Show on mobile, hide on desktop */
+  .mobile-only {
+    @apply block lg:hidden;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full px-4 py-3 bg-dark/50 border border-white/10 rounded-lg
+           text-white placeholder-gray-500 focus:outline-none
+           focus:border-primary transition-colors;
+  }
+
+  .textarea {
+    @apply input resize-none min-h-[120px];
+  }
+
+  /* Link styles */
+  .link {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-white transition-colors
+           relative after:absolute after:bottom-0 after:left-0
+           after:w-0 after:h-0.5 after:bg-primary
+           after:transition-all hover:after:w-full;
+  }
+
+  .nav-link-active {
+    @apply text-white after:w-full;
+  }
+}
+
+@layer utilities {
+  /* Animated gradient background */
+  .bg-animated-gradient {
+    background: linear-gradient(-45deg, #2563EB, #10B981, #3498DB, #1F2937);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+  }
+
+  /* Grid pattern overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Dot pattern overlay */
+  .bg-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary') theme('colors.dark');
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: theme('colors.dark');
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.primary');
+    border-radius: 3px;
+  }
+
+  /* No scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

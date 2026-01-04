@@ -1,0 +1,202 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "technology": "Technology",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "KAECZEN",
+    "tagline": "Computational Design & AI Solutions for AEC",
+    "description": "Transforming the AEC industry through computational design, automation, and artificial intelligence technology.",
+    "cta_primary": "Get Started",
+    "cta_secondary": "View Services"
+  },
+  "about": {
+    "title": "About Kaeczen",
+    "description": "Kaeczen is a technology consultancy specializing in computational design, software development, and artificial intelligence integration for the AEC (Architecture, Engineering, and Construction) industry.",
+    "experience": "With over 14 years of experience in parametric design and high-complexity geometric projects, our mission is to help AEC companies modernize their workflows through automation and AI tools.",
+    "operations": "We operate internationally, offering remote consulting services for companies seeking to transform their design and construction processes."
+  },
+  "expertise": {
+    "title": "Expertise Areas",
+    "computational": {
+      "title": "Computational & Parametric Design",
+      "description": "Specialized in Rhinoceros and Grasshopper workflows for design automation, geometric optimization, and digital fabrication.",
+      "items": [
+        "Complex parametric definitions in Grasshopper",
+        "Custom plugin and component development in C# and Python",
+        "Complex geometry and form-finding with Kangaroo Physics",
+        "Structural optimization and performance analysis",
+        "Model preparation for digital fabrication"
+      ]
+    },
+    "bim": {
+      "title": "BIM Automation & Interoperability",
+      "description": "Seamless integration between design tools and BIM platforms to optimize workflows in construction projects.",
+      "items": [
+        "Rhino.Inside Revit for bidirectional workflows",
+        "Speckle for collaboration and data interoperability",
+        "BIM process automation with Dynamo and Revit APIs",
+        "Automated quality control in BIM models",
+        "Project data extraction and analysis"
+      ]
+    },
+    "web": {
+      "title": "Web Development & Parametric Applications",
+      "description": "Creation of web applications that allow end clients to interact with parametric designs without technical knowledge.",
+      "items": [
+        "3D configurators with ShapeDiver",
+        "Web applications with React, Three.js, and WebGL",
+        "Integration with Rhino.Compute for cloud calculations",
+        "Interactive 3D visualization in browser",
+        "E-commerce for customizable products"
+      ]
+    },
+    "ai": {
+      "title": "Artificial Intelligence Integration",
+      "description": "Pioneers in AI integration for automation of architectural design processes and software development.",
+      "items": [
+        "Development with Claude Code and Cursor IDE for 10x productivity",
+        "Context Engineering and prompt optimization",
+        "AI agents for architectural design assistance",
+        "Anthropic and OpenAI API integration",
+        "MCP (Model Context Protocol) for AI-CAD connection"
+      ]
+    }
+  },
+  "product": {
+    "title": "Featured Product: Grasshopper MCP",
+    "description": "We have developed a pioneering integration that connects Claude AI directly with Grasshopper through the Model Context Protocol (MCP). This tool allows controlling parametric designs through natural language.",
+    "capabilities_title": "Current Capabilities",
+    "capabilities": [
+      "Create components (sliders, panels, points, numbers, booleans)",
+      "Connect and disconnect nodes programmatically",
+      "Adjust parameters in real-time",
+      "Search components by name or type",
+      "Group components with custom colors",
+      "Bake geometry to Rhino layers",
+      "Monitor solution statistics"
+    ],
+    "use_cases_title": "Use Cases",
+    "example_quote": "\"Create a slider from 0 to 100 and connect it to a circle's radius\" — and watch it happen instantly.",
+    "use_cases": [
+      "Rapid prototyping through voice/text commands",
+      "Educational tools for teaching parametric design",
+      "Automation of repetitive tasks",
+      "Accessible design for non-programmers"
+    ],
+    "cta": "Request Beta Access"
+  },
+  "services": {
+    "title": "Our Services",
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Strategic advisory to implement computational design and automation technologies in your organization. We evaluate your current workflows and propose tailored solutions.",
+      "items": [
+        "Workflow analysis and optimization",
+        "Technology stack recommendations",
+        "Implementation roadmaps",
+        "ROI assessment for automation projects"
+      ]
+    },
+    "development": {
+      "title": "Custom Tool Development",
+      "description": "We create plugins, scripts, and applications specific to your needs: from Grasshopper components to complete web applications with 3D visualization.",
+      "items": [
+        "Grasshopper plugins and components",
+        "Python and C# scripts for Rhino/Revit",
+        "Custom APIs and integrations",
+        "Desktop and web applications"
+      ]
+    },
+    "training": {
+      "title": "Training & Education",
+      "description": "Training programs in Grasshopper, data structures, Python, Rhino.Inside Revit, and AI tools. Courses adapted to all levels, from beginners to advanced professionals.",
+      "items": [
+        "Corporate training programs",
+        "Online workshops and bootcamps",
+        "One-on-one mentoring",
+        "Custom curriculum development"
+      ]
+    },
+    "configurators": {
+      "title": "3D Configurators & E-commerce",
+      "description": "Development of web platforms where your clients can customize products in 3D, view real-time renders, and place orders. Ideal for parametric furniture, facades, and architectural products.",
+      "items": [
+        "ShapeDiver configurator development",
+        "Real-time 3D visualization",
+        "Quote generation systems",
+        "E-commerce integration",
+        "Manufacturing file exports"
+      ]
+    }
+  },
+  "technology": {
+    "title": "Technology Stack",
+    "categories": {
+      "computational": "Computational Design",
+      "programming": "Programming",
+      "platforms": "Platforms & Frameworks",
+      "ai": "Artificial Intelligence"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "items": [
+      "5+ ShapeDiver applications deployed serving 10,000+ end users",
+      "Facade configurator processing 500+ custom orders",
+      "Parametric platform combining Rhino.Compute with Claude API",
+      "Structural optimization tool reducing calculation times from hours to minutes",
+      "Automated BIM quality control systems accessible via web",
+      "E-commerce solutions for architectural components and parametric furniture"
+    ]
+  },
+  "why": {
+    "title": "Why Kaeczen?",
+    "experience": {
+      "title": "Proven Experience",
+      "description": "Over 14 years of experience in computational design and high-complexity geometric projects in the AEC sector."
+    },
+    "innovation": {
+      "title": "Constant Innovation",
+      "description": "Pioneers in AI integration with CAD tools. We develop proprietary products like Grasshopper MCP that define the future of the industry."
+    },
+    "solutions": {
+      "title": "End-to-End Solutions",
+      "description": "From strategic consulting to software development and training. A single partner for all your digital transformation needs."
+    },
+    "reach": {
+      "title": "International Reach",
+      "description": "We operate remotely with clients worldwide. Schedule flexibility and communication in English and Spanish."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Interested in transforming your workflows with computational design and AI? Contact us for a free initial consultation.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "language": "Preferred Language",
+      "submit": "Send Message"
+    },
+    "info": {
+      "email": "contact@kaeczen.com",
+      "web": "www.kaeczen.com"
+    }
+  },
+  "footer": {
+    "tagline": "Computational Design & AI Solutions",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "Kaeczen. All rights reserved.",
+    "registered": "Registered in El Salvador."
+  }
+}
