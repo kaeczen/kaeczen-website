@@ -15,6 +15,14 @@
   AddType application/json .json
   AddType font/woff2 .woff2
   AddType font/woff .woff
+
+  # 3D model formats
+  AddType model/gltf-binary .glb
+  AddType model/gltf+json .gltf
+  AddType application/octet-stream .bin
+  AddType model/obj .obj
+  AddType image/ktx2 .ktx2
+  AddType application/wasm .wasm
 </IfModule>
 
 # Enable compression
@@ -28,4 +36,9 @@
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+
+  # Cache 3D models
+  ExpiresByType model/gltf-binary "access plus 1 year"
+  ExpiresByType model/gltf+json "access plus 1 year"
+  ExpiresByType image/ktx2 "access plus 1 year"
 </IfModule>
