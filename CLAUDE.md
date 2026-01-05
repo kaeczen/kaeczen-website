@@ -26,7 +26,7 @@ Bilingual (EN/ES) website for Kaeczen - a technology consultancy specializing in
 - **Forms:** React Hook Form + Zod
 - **Email:** EmailJS (@emailjs/browser)
 - **Routing:** React Router v6
-- **Server:** Express (for Hostinger deployment)
+- **Hosting:** Static files on Hostinger (Apache)
 
 ## Project Structure
 
@@ -80,11 +80,15 @@ Bilingual (EN/ES) website for Kaeczen - a technology consultancy specializing in
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── router.jsx
+├── dist/                          # Production build (upload to Hostinger)
+│   ├── .htaccess                  # SPA routing + MIME types
+│   ├── index.html
+│   ├── favicon.svg
+│   └── assets/                    # JS/CSS bundles
 ├── .env                           # EmailJS credentials (DO NOT COMMIT)
 ├── index.html
 ├── package.json
 ├── postcss.config.js
-├── server.js                      # Express server for production
 ├── tailwind.config.js
 └── vite.config.js
 ```
@@ -197,27 +201,86 @@ colors: {
 
 ## Deployment (Hostinger)
 
-### Server Configuration
-Express server in `server.js`:
-- Serves static files from `/dist`
-- SPA fallback (all routes -> index.html)
-- Gzip compression enabled
-- Default port: 3000
+### Method: Static File Hosting (Recommended)
+**Important:** Use static hosting, NOT Node.js. Node.js deployment causes MIME type errors.
 
 ### Deploy Steps
-1. Run `npm run build`
-2. Upload entire project to Hostinger
-3. Set environment variables in Hostinger panel
-4. Set entry point: `server.js`
-5. Start Node.js application
 
-### Required Hostinger Settings
+#### 1. Build the Project
+```bash
+npm run build
 ```
-Node.js Version: 18.x or 20.x
-Entry Point: server.js
-Build Command: npm run build
-Start Command: npm start
+This creates the `dist/` folder with all production files.
+
+#### 2. Create Website in Hostinger
+1. Log into hPanel → **Websites** → **Add Website**
+2. Select **"Sitio web PHP/HTML personalizado"** (Custom PHP/HTML)
+3. Do NOT select "App web de Node.js"
+4. Choose your domain and complete setup
+
+#### 3. Upload Files to public_html
+1. Go to **Files** → **File Manager**
+2. Navigate to `public_html`
+3. Delete any existing files
+4. Upload these files from `dist/` folder:
+   - `.htaccess` (enable "Show Hidden Files" to see it)
+   - `index.html`
+   - `favicon.svg`
+   - `assets/` folder (contains all JS/CSS)
+
+#### 4. Verify File Structure
 ```
+public_html/
+├── .htaccess        # SPA routing + MIME types
+├── index.html
+├── favicon.svg
+└── assets/
+    ├── index-[hash].css
+    ├── index-[hash].js
+    ├── vendor-[hash].js
+    ├── three-[hash].js
+    ├── animation-[hash].js
+    └── HeroScene-[hash].js
+```
+
+#### 5. Enable SSL
+1. In hPanel: **Security** → **SSL**
+2. Enable/Install SSL certificate
+3. Wait for activation (few minutes)
+
+### The .htaccess File
+Located at `dist/.htaccess` - handles SPA routing and MIME types:
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/svg+xml .svg
+</IfModule>
+```
+
+### Why NOT Node.js on Hostinger
+- Node.js deployment causes "MIME type text/plain" errors
+- Static hosting handles MIME types correctly out of the box
+- Vite builds are static files - no server needed
+- Simpler, faster, more reliable
+
+### Re-deploying Updates
+1. Run `npm run build` locally
+2. Upload new `dist/` contents to `public_html`
+3. Overwrite existing files
+
+### GitHub Repository
+- URL: https://github.com/kaeczen/kaeczen-website
+- Branch: main
 
 ## Routes
 
