@@ -12,10 +12,24 @@ const PORT = process.env.PORT || 3000;
 // Gzip compression
 app.use(compression());
 
+// Set correct MIME types
+express.static.mime.define({
+  'application/javascript': ['js'],
+  'text/css': ['css'],
+  'image/svg+xml': ['svg']
+});
+
 // Serve static files from dist
 app.use(express.static(path.join(__dirname, 'dist'), {
   maxAge: '1y',
-  etag: false
+  etag: false,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    } else if (filePath.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  }
 }));
 
 // SPA fallback - all routes serve index.html
